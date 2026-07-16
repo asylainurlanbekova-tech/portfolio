@@ -1,0 +1,9 @@
+.about-flex img { 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  border: 5px solid #667eea; 
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
