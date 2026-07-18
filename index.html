@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Асылай | Веб-Девелопер Портфолио</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(255,255,255,0.95);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+      animation: slideDown 0.8s;
+    }
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #667eea;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #764ba2; transform: translateY(-2px); }
+    
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+    
+    .hero {
+      text-align: center;
+      color: white;
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200') center/cover;
+      border-radius: 20px;
+      margin: 20px;
+      animation: fadeInUp 1s;
+    }
+    .hero h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    .hero p { font-size: 1.3em; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+    
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    .card:hover { transform: translateY(-10px) scale(1.02); }
+    .card h2 { color: #667eea; margin-bottom: 15px; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+    
+    .about-flex { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+    
+    /* БУЛ ЖЕРДИ КОШТУМ - АЗЫР СҮРӨТ КИЧИРЕЕТ */
+    .about-flex img { 
+      width: 200px; 
+      height: 200px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 5px solid #667eea; 
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+    
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+    .skill-item { background: #f0f0ff; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; transition: 0.3s; font-size: 18px; }
+    .skill-item:hover { background: #667eea; color: white; transform: scale(1.05); }
+    
+    .project-box { background: #f8f8ff; padding: 20px; border-left: 5px solid #667eea; border-radius: 8px; }
+    .project-img { width: 100%; border-radius: 10px; margin-top: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover { transform: scale(1.05); }
+    
+    .input-box { padding: 12px; border: 2px solid #667eea; border-radius: 10px; font-size: 16px; }
+    
+    footer { text-align: center; padding: 30px; color: white; }
+    
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideDown { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+  </style>
+</head>
+<body>
+<header>
+    <nav>
+      <a href="#about">Мен жөнүндө</a>
+      <a href="#skills">Чеберчилик</a>
+      <a href="#facts">3 Факт</a>
+      <a href="#project">Проект</a>
+      <a href="#ai">ЖИ Жардамчы</a>
+      <a href="#converter">Конвертер</a>
+      <a href="#clock">Саат</a>
+      <a href="#quiz">Викторина</a>
+      <a href="#contact">Байланыш</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Саламатсызбы! Мен Асылай</h1>
+    <p>Келечектеги Веб-Девелопер | Окурмэн IT Академиясынын студенти</p>
+  </section>
+
+  <div class="container">
+    
+<section id="about" class="card">
+  <h2>Мен жөнүндө</h2>
+  <div class="about-flex">
+    <!-- БУЛ ЖЕРДЕГІ АТТЫ 1 ЖОЛУ .jpeg КЫЛДЫМ -->
+    <img src="asylai.jpg.jpeg.jpeg" alt="Менин сүрөтүм">
+    <p>Мен 2 айдан бери IT багытында окуйм. Веб-сайт түзүүгө, жаңы технологияларды үйрөнүүгө чоң кызыгуу менен мамиле кылам. 
+    Максатым - профессионалдуу веб-девелопер болуп, өзүмдүн кыялдарымды ишке ашыруу.</p>
+  </div>
+</section>
+
+    <section id="skills" class="card">
+      <h2>Менин Чеберчиликтерим</h2>
+      <div class="skills-grid">
+        <div class="skill-item">💻 HTML</div>
+        <div class="skill-item">🎨 CSS</div>
+        <div class="skill-item">⚡ JavaScript</div>
+        <div class="skill-item">🖌️ Canva Дизайн</div>
+        <div class="skill-item">🤝 Командада иштөө</div>
+        <div class="skill-item">🇰🇬 Кыргыз тили</div>
+        <div class="skill-item">🇷🇺 Орус тили</div>
+        <div class="skill-item">🇬🇧 Англис тили</div>
+      </div>
+    </section>
+
+    <section id="facts" class="card">
+      <h2>Мен Жөнүндө 3 Факт</h2>
+      <ol>
+        <li>🏐 Волейбол ойногонду абдан жакшы көрөм</li>
+        <li>📚 Жаңы нерсени үйрөнүүгө дайыма кызыгам</li>
+        <li>💻 Максатым - мыкты программист болу</li>
+      </ol>
+    </section>
+
+    <section id="project" class="card">
+      <h2>Менин Проектим 💻</h2>
+      <div class="project-box">
+        <h3>Портфолио Сайт</h3>
+        <p>Бул сайтты мен өз алдынча HTML, CSS жана JavaScript колдонуп жасадым.</p>
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800" alt="Код сүрөтү" class="project-img">
+      </div>
+    </section>
+
+    <section id="ai" class="card">
+      <h2>🤖 Менин Чыныгы ЖИ Жардамчым</h2>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <input type="text" id="userInput" placeholder="Мисалы: Сайт жөнүндө айт" class="input-box" style="flex: 1;">
+        <button onclick="aiChat()" class="btn" style="background: #28a745;">Жөнөтүү</button>
+      </div>
+      <div id="chatBox" style="margin-top: 15px; max-height: 200px; overflow-y: auto;"></div>
+    </section>
+
+    <section id="converter" class="card">
+      <h2>💰 Акча Конвертери</h2>
+      <input type="number" id="dollar" placeholder="Доллар суммасын жаз" class="input-box" style="width: 200px;">
+      <button onclick="convert()" class="btn">Эсептөө</button>
+      <p id="som" style="margin-top: 15px; font-size: 20px; font-weight: bold; color: #667eea;"></p>
+    </section>
+
+    <section id="clock" class="card">
+      <h2>⏰ Санариптик Саат</h2>
+      <p id="saat" style="font-size: 40px; font-weight: bold; color: #667eea; text-align: center;"></p>
+    </section>
+
+    <section id="quiz" class="card">
+      <h2>🧠 Викторина</h2>
+      <p><b>Суроо:</b> Кыргызстандын борбору кайсы?</p>
+      <br>
+      <button onclick="tekshere(0)" class="btn" style="background: #dc3545; margin: 5px;">Ош</button>
+      <button onclick="tekshere(1)" class="btn" style="background: #28a745; margin: 5px;">Бишкек</button>
+      <button onclick="tekshere(2)" class="btn" style="background: #dc3545; margin: 5px;">Нарын</button>
+      <p id="jiyintik" style="margin-top: 15px; font-weight: bold;"></p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Байланыш</h2>
+      <p><b>Email:</b> asylainurlanbekova@gmail.com</p>
+      <br>
+      <a href="mailto:asylainurlanbekova@gmail.com" class="btn">Мага Кат Жазу</a>
+    </section>
+
+  </div>
+
+<script>
+  function aiChat() {
+    let input = document.getElementById("userInput").value;
+    let chatBox = document.getElementById("chatBox");
+    if(input.trim() == "") return;
+    chatBox.innerHTML += `<p style="background:#f0f0ff; padding:10px; border-radius:8px;"><b>Сиз:</b> ${input}</p>`;
+    let answer = "Кызыктуу суроо! Мен дагы үйрөнүп жатам 🤖";
+    if(input.toLowerCase().includes("саламат")) answer = "Саламатсызбы Асылай! 😊";
+    chatBox.innerHTML += `<p style="background:#667eea; color:white; padding:10px; border-radius:8px;"><b>ЖИ:</b> ${answer}</p>`;
+    document.getElementById("userInput").value = "";
+  }
+
+  function convert() {
+    let dollar = document.getElementById("dollar").value;
+    let som = dollar * 89.5;
+    document.getElementById("som").innerText = som.toFixed(2) + " сом";
+  }
+
+  function updateSaat() {
+    let now = new Date();
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+    if(m < 10) m = "0" + m;
+    if(s < 10) s = "0" + s;
+    document.getElementById("saat").innerText = h + ":" + m + ":" + s;
+  }
+  setInterval(updateSaat, 1000);
+  updateSaat();
+
+  function tekshere(j) {
+    let jiyintik = document.getElementById("jiyintik");
+    if(j == 1) {
+      jiyintik.innerText = "Туура! 💪 +1 упай";
+      jiyintik.style.color = "green";
+    } else {
+      jiyintik.innerText = "Туура эмес. Туура жооп: Бишкек";
+      jiyintik.style.color = "red";
+    }
+  }
+</script>
+
+<footer>
+  <p>© 2026 Асылай ✨</p>
+</footer>
+
+</body>
+</html>
