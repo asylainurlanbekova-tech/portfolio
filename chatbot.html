@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+  <meta charset="UTF-8">
+  <title>ЖИ Жардамчы</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><nav class="container"><ul><li><a href="projects.html">Артка</a></li></ul></nav></header>
+  <div class="container">
+    <section>
+      <h2>ЖИ Жардамчы</h2>
+      <p>Саламат айтса "Саламатсызбы!" деп жооп берет 😄</p>
+      <input id="msg" placeholder="Жаз..." style="padding:10px; width:70%;">
+      <button onclick="reply()" class="btn">Жөнөтүү</button>
+      <p id="answer" style="margin-top:20px;"></p>
+    </section>
+  </div>
+  <script>
+    function reply(){
+      let text = document.getElementById('msg').value;
+      if(text.includes("саламат")) document.getElementById('answer').innerText = "Саламатсызбы! Мен сизге кантип жардам бере алам?";
+      else document.getElementById('answer').innerText = "Кечиресиз, түшүнбөдүм. Кайра жазыңызчы";
+    }
+  </script>
+</body>
+</html>

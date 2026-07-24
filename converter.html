@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="kg">
+<head>
+  <meta charset="UTF-8">
+  <title>Конвертер</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><nav class="container"><ul><li><a href="projects.html">Артка</a></li></ul></nav></header>
+  <div class="container">
+    <section>
+      <h2>Валюта Конвертери</h2>
+      <p>1 USD = 89.5 KGS</p>
+      <input id="usd" type="number" placeholder="USD жазыңыз" style="padding:10px;">
+      <button onclick="convert()" class="btn">Котору</button>
+      <h3 id="result" style="margin-top:20px;"></h3>
+    </section>
+  </div>
+  <script>
+    function convert(){
+      let usd = document.getElementById('usd').value;
+      let kgs = usd * 89.5;
+      document.getElementById('result').innerText = usd + " USD = " + kgs.toFixed(2) + " KGS";
+    }
+  </script>
+</body>
+</html>
